@@ -1,0 +1,11 @@
+set number
+syntax on
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'Lokaltog/powerline'
+call vundle#end()
+filetype plugin indent on

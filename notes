@@ -1,0 +1,5 @@
+""install vim7.3 form source
+yum -y install ncurses-devel.x86_64
+./configure --with-features=huge --enable-perlinterp
+make
+make install
