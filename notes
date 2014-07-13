@@ -1,5 +1,19 @@
 ""install vim7.3 form source
 yum -y install ncurses-devel.x86_64
-./configure --with-features=huge --enable-perlinterp
+./configure --with-features=huge --enable-perlinterp --enable-pythoninterp=dynamic --enable-pythoninterp
 make
 make install
+
+""install YouCompleteMe plugin for vim
+yum install python-devel.x86_64
+./install.sh
+
+""install Powerline plugin for vim
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+mv ./Downloads/PowerlineSymbols.otf .fonts/
+fc-cache -vf ~/.fonts
+
+""install NERDTree plugin for vim
+Bundle 'scrooloose/nerdtree'
+map <F2> :NERDTreeToggle<CR>
+
