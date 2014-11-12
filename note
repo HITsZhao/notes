@@ -1,0 +1,32 @@
+pythonbrew 安装
+1.		$easy_install pythonbrew
+2.	~/.bash_profile添加
+		[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
+3.		$source .bash_profile
+
+pythonbrw 使用
+1.列出可安装python版本: pythonbrew list --know
+2.安装某个版本的python: pythonbrew install 2.7.3
+3.删除已安装的某版本的python: pythonbrew uninstall 2.7.3
+4.列出已安装python版本（当前使用的版本用星号标记）: pythonbrew list
+5.使用某个版本的python(仅当前终端窗口有效): pythonbrew use 2.7.3
+6.切换到某个版本(一直有效)：pythonbrew switch 2.7.3 
+
+CentOS安装MySQL5.6：(MySql在名单中已经被mariaDB取代)
+$ wget http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
+$ rpm -ivh mysql-community-release-el7-5.noarch.rpm
+$ yum install mysql-community-server
+
+重启MySql服务：
+$ service mysqld restart
+
+设置密码：
+
+$ mysql -uroot
+mysql> set password for 'root'@'localhost' = password('mypasswd');
+mysql> exit
+
+secureCRT终端设置vim颜色模式：
+1. secureCRT 客户端： 选项--->会话选项--->终端--->仿真--->勾选"ANSCI颜色"
+2. linux: ~/.bashrc: export TERM=xterm
+
