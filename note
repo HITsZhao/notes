@@ -25,8 +25,28 @@ $ service mysqld restart
 $ mysql -uroot
 mysql> set password for 'root'@'localhost' = password('mypasswd');
 mysql> exit
+登录MySql：(以root用户登录)
+$ mysql -u root -p
 
 secureCRT终端设置vim颜色模式：
 1. secureCRT 客户端： 选项--->会话选项--->终端--->仿真--->勾选"ANSCI颜色"
 2. linux: ~/.bashrc: export TERM=xterm
+
+CentOS7 安装httpd (参考URL：http://blog.csdn.net/smstong/article/details/39343543 以及 http://www.jb51.net/os/188488.html)
+$ yum install httpd
+启动httpd
+$ systemctl start httpd.service
+设置httpd开机启动
+$ systemctl enable httpd
+这个配置文件被链接到了/etc/systemd/system/multi-user.target.wants/httpd.service
+lrwxrwxrwx. 1 root root 37 Sep 17 02:38 httpd.service -> /usr/lib/systemd/system/httpd.service
+打开firewalld的80端口(CentOS7默认防火墙由iptables改为firewalld):
+$ firewall-cmd --add-service=http(暂时生效)
+$ firewall-cmd --permanent --add-service=http  (写入配置文件)
+httpd这个服务添加到了/etc/firewalld/zones/public.xml这个zone配置文件
+重启防火墙使配置生效:
+$ systemctl restart firewalld
+
+安装php及其扩展
+$ yum install php php-common php-gd php-mcrypt php-pear php-pecl-memcache php-mhash php-mysql php-xml
 
