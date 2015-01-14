@@ -65,4 +65,8 @@ $ ./configure --user=nginx --group=www --with-pcre --with-http_ssl_module
 $ make
 $ make install
 
+安装node.js
+URL: https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager
+# curl -sL https://rpm.nodesource.com/setup | bash -
+# yum install -y nodejs
 
