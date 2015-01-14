@@ -50,3 +50,19 @@ $ systemctl restart firewalld
 安装php及其扩展
 $ yum install php php-common php-gd php-mcrypt php-pear php-pecl-memcache php-mhash php-mysql php-xml
 
+安装nginx
+# yum install yum install gcc-c++
+# yum -y install zlib zlib-devel openssl openssl-devel pcre pcre-devel
+# 配置nginx用户: 在/etc/passwd中增加一行: nginx:x:52:52::/:/sbin/nologin
+# 配置www组 : 在/etc/group中增加一行：www:x:52:nginx,daemon
+# init q
+$ mkdir ~/src
+$ cd ~/src
+$ wget http://nginx.org/download/nginx-1.7.9.tar.gz
+$ tar zvxf nginx-1.7.9.tar.gz
+$ cd nginx-1.7.9
+$ ./configure --user=nginx --group=www --with-pcre --with-http_ssl_module
+$ make
+$ make install
+
+
